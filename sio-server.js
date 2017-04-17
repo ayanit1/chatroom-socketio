@@ -1,10 +1,10 @@
-var express = require("express");
+var express = require("express"); //express server
 var http = require("http");
 var app = express();
-var server = http.createServer(app).listen(3000);
-var io = require("socket.io")(server);
+var server = http.createServer(app).listen(3000); //create server based on app
+var io = require("socket.io")(server); //socket.io is a function
 
-app.use(express.static("./public"));
+app.use(express.static("./public")); //middleware serve files in public folder
 
 io.on("connection", function(socket) {
 
